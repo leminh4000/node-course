@@ -1,8 +1,35 @@
-POST http://localhost:3004/users HTTP/1.1
 
+###POST user
+POST http://localhost:3004/users HTTP/1.1
 content-type: application/json
+
 {
     "name": "Andrew Mead",
     "email": "andrew@example.com",
     "password": "Red123!$"
 }
+
+###GET user
+GET http://localhost:3004/users HTTP/1.1
+content-type: application/json
+
+###GET user
+GET http://localhost:3004/users/647e31af76fde3868c8f550b HTTP/1.1
+content-type: application/json
+
+
+### POST task
+POST http://localhost:3004/tasks HTTP/1.1
+content-type: application/json
+
+{
+    "description": "Read mail",
+    "completed": false
+}
+
+### GET tasks
+GET http://localhost:3004/tasks HTTP/1.1
+
+### GET tasks
+GET http://localhost:3004/tasks/647f2fa8ce7f9bce0744b4ac HTTP/1.1
+
