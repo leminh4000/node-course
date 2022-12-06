@@ -6,15 +6,46 @@ content-type: application/json
 {
     "name": "Andrew Mead",
     "email": "andrew@example.com",
-    "password": "Red123!$"
+    "password": "12345678"
 }
+
+###login user
+POST http://localhost:3004/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "andrew@example.com",
+    "password": "12345678"
+}
+###signup user
+POST http://localhost:3004/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Andrew Mead 3",
+    "email": "andrew3@example.com",
+    "password": "12345678"
+}
+
+###PATCH user
+PATCH http://localhost:3004/users/637ef1cfcba57060d048c061 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Minh",
+    "password": "testaSDASSAFASF"
+}
+
+###DELETE user
+DELETE http://localhost:3004/users/637e31af76fde3868c8f550b HTTP/1.1
+content-type: application/json
 
 ###GET user
 GET http://localhost:3004/users HTTP/1.1
 content-type: application/json
 
 ###GET user
-GET http://localhost:3004/users/647e31af76fde3868c8f550b HTTP/1.1
+GET http://localhost:3004/users/638ace36a56f621a31442e77 HTTP/1.1
 content-type: application/json
 
 
@@ -27,9 +58,22 @@ content-type: application/json
     "completed": false
 }
 
+### PUT task
+PATCH http://localhost:3004/tasks/6385b83b741737e0c51df32c HTTP/1.1
+content-type: application/json
+
+{
+    "completed": true
+}
+
+### DELETE task
+DELETE http://localhost:3004/tasks/6385b83b741737e0c51df32c HTTP/1.1
+content-type: application/json
+
+
 ### GET tasks
 GET http://localhost:3004/tasks HTTP/1.1
 
 ### GET tasks
-GET http://localhost:3004/tasks/647f2fa8ce7f9bce0744b4ac HTTP/1.1
+GET http://localhost:3004/tasks/6385b86a51902b1925997c4f HTTP/1.1
 
