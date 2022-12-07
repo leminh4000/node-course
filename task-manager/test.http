@@ -40,8 +40,9 @@ content-type: application/json
 DELETE http://localhost:3004/users/637e31af76fde3868c8f550b HTTP/1.1
 content-type: application/json
 
-###GET user
-GET http://localhost:3004/users HTTP/1.1
+###GET user profile
+GET http://localhost:3004/user/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzAzMTA3NzR9.ZcgFJyrFE1D_fsXfaJycMFCrh0psIQbrLxV78gMws90
 content-type: application/json
 
 ###GET user
