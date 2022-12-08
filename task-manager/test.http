@@ -28,27 +28,33 @@ content-type: application/json
 }
 
 ###PATCH user
-PATCH http://localhost:3004/users/637ef1cfcba57060d048c061 HTTP/1.1
+PATCH http://localhost:3004/users/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYTQ4NGJhNDA0OGMxNjk2NWYxYWIiLCJpYXQiOjE2NzA0MjM2ODh9.WdXMtWsMmU9Cf4AP1E6E5dDtXgIib3dImc4sqqvix6I
 content-type: application/json
 
 {
     "name": "Minh",
-    "password": "testaSDASSAFASF"
+    "password": "12345678"
 }
 
 ###DELETE user
-DELETE http://localhost:3004/users/637e31af76fde3868c8f550b HTTP/1.1
+DELETE http://localhost:3004/users/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzA0MjM1MzZ9.VH2lZeZwnC0DZ-Prq0rG3I7bGMp12XqaBob-yf_VReU
 content-type: application/json
 
 ###GET user profile
-GET http://localhost:3004/user/me HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzAzMTA3NzR9.ZcgFJyrFE1D_fsXfaJycMFCrh0psIQbrLxV78gMws90
+GET http://localhost:3004/users/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYTQ4NGJhNDA0OGMxNjk2NWYxYWIiLCJpYXQiOjE2NzA0MjM2ODh9.WdXMtWsMmU9Cf4AP1E6E5dDtXgIib3dImc4sqqvix6I
 content-type: application/json
 
-###GET user
-GET http://localhost:3004/users/638ace36a56f621a31442e77 HTTP/1.1
+###logout
+POST http://localhost:3004/users/logout HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzA0MDI2OTh9.aoneU95dV197l7E6Yypl11m_h_loupcf8c6p3yG1BFE
 content-type: application/json
-
+###logout All
+POST http://localhost:3004/users/logoutAll HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzA0MDE1NzV9.P7fNgt52s6WMEpejcHYEy2tUarALXXEsXQZRvC7ExFo
+content-type: application/json
 
 ### POST task
 POST http://localhost:3004/tasks HTTP/1.1
