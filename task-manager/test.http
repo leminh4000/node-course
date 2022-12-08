@@ -22,9 +22,19 @@ POST http://localhost:3004/users/signup HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Andrew Mead 3",
-    "email": "andrew3@example.com",
+    "name": "Andrew Mead",
+    "email": "andrew@example.com",
     "password": "12345678"
+}
+
+###signup user
+POST http://localhost:3004/users/signup HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Minh",
+  "email": "minh@example.com",
+  "password": "12345678"
 }
 
 ###PATCH user
@@ -39,7 +49,7 @@ content-type: application/json
 
 ###DELETE user
 DELETE http://localhost:3004/users/me HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzhlZTg2MjYyZDg5MDM1ZjM5YmNhMjIiLCJpYXQiOjE2NzA0MjM1MzZ9.VH2lZeZwnC0DZ-Prq0rG3I7bGMp12XqaBob-yf_VReU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 content-type: application/json
 
 ###GET user profile
@@ -58,15 +68,17 @@ content-type: application/json
 
 ### POST task
 POST http://localhost:3004/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 content-type: application/json
 
 {
-    "description": "Read mail",
+    "description": "Go to school",
     "completed": false
 }
 
-### PUT task
-PATCH http://localhost:3004/tasks/6385b83b741737e0c51df32c HTTP/1.1
+### PATCH task
+PATCH http://localhost:3004/tasks/6391762b251c17dd7a535b9d HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 content-type: application/json
 
 {
@@ -74,13 +86,16 @@ content-type: application/json
 }
 
 ### DELETE task
-DELETE http://localhost:3004/tasks/6385b83b741737e0c51df32c HTTP/1.1
+DELETE http://localhost:3004/tasks/639179f6f03461cac6e03c39 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 content-type: application/json
 
 
 ### GET tasks
 GET http://localhost:3004/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 
 ### GET tasks
-GET http://localhost:3004/tasks/6385b86a51902b1925997c4f HTTP/1.1
+GET http://localhost:3004/tasks/63916e36f1b58ab889c0eeb3 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 
