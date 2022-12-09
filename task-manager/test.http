@@ -67,6 +67,29 @@ content-type: application/json
   "age" : 34
 }
 
+### add avatar
+POST http://localhost:3004/users/me/avatar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzNDdkNTQ4ZWYwN2YwNDJlMjQ2MjUiLCJpYXQiOjE2NzA1OTY1NjV9.ZRMN5iWa_X18koEklJeK_Q7ClUDUCV8IARRwv_zq-SI
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="avatar"; filename="related-1.jpg"
+Content-Type: image/jpeg
+
+< ./related-1.jpg
+
+--boundary--
+
+### remove avatar
+DELETE http://localhost:3004/users/me/avatar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzNDdkNTQ4ZWYwN2YwNDJlMjQ2MjUiLCJpYXQiOjE2NzA1OTY1NjV9.ZRMN5iWa_X18koEklJeK_Q7ClUDUCV8IARRwv_zq-SI
+content-type: application/json
+
+### get avatar
+DELETE http://localhost:3004/users/me/avatar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkzNDdkNTQ4ZWYwN2YwNDJlMjQ2MjUiLCJpYXQiOjE2NzA1OTY1NjV9.ZRMN5iWa_X18koEklJeK_Q7ClUDUCV8IARRwv_zq-SI
+content-type: application/json
+
 ###PATCH user
 PATCH http://localhost:3004/users/me HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYTQ4NGJhNDA0OGMxNjk2NWYxYWIiLCJpYXQiOjE2NzA0MjM2ODh9.WdXMtWsMmU9Cf4AP1E6E5dDtXgIib3dImc4sqqvix6I
@@ -98,12 +121,21 @@ content-type: application/json
 
 ### POST task
 POST http://localhost:3004/tasks HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyZjlkNTIyOTMzMTcxZGY5Njg0Y2YiLCJpYXQiOjE2NzA1NzY1OTd9.S1bDfr6AarH7bCu0Djo2kWacunulEJG7PaTd0VUfB7U
 content-type: application/json
 
 {
-    "description": "Go to school",
-    "completed": false
+    "description": "Go to office",
+    "completed": true
+}
+### POST task
+POST http://localhost:3004/tasks HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyZjlkNTIyOTMzMTcxZGY5Njg0Y2YiLCJpYXQiOjE2NzA1NzY1OTd9.S1bDfr6AarH7bCu0Djo2kWacunulEJG7PaTd0VUfB7U
+content-type: application/json
+
+{
+    "description": "Go to train4",
+    "completed": true
 }
 
 ### PATCH task
@@ -122,10 +154,22 @@ content-type: application/json
 
 
 ### GET tasks
-GET http://localhost:3004/tasks HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
+GET http://localhost:3004/tasks?sortBy=createdAt:desc HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyZjlkNTIyOTMzMTcxZGY5Njg0Y2YiLCJpYXQiOjE2NzA1NzY1OTd9.S1bDfr6AarH7bCu0Djo2kWacunulEJG7PaTd0VUfB7U
 
 ### GET tasks
 GET http://localhost:3004/tasks/63916e36f1b58ab889c0eeb3 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkxNzQ5ZTRiZWNiOWNiOWI2ODM1NWMiLCJpYXQiOjE2NzA0NzY5NTh9.cIZ3FJVJI3c7o7H0recTybgbwZE8bwXnLuNMfnE6ZS4
 
+### ---------------------------- UPLOAD FEED IMAGES ----------------------------
+POST http://localhost:3004/upload
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="upload"; filename="related-1.png2"
+Content-Type: image/jpeg
+
+< ./related-1.jpg
+
+--boundary--
+### -------------------------------------------------------------------------

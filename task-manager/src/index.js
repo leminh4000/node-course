@@ -9,8 +9,33 @@ const User = require("./models/user");
 const app = express()
 const port = process.env.PORT || 3004
 
+const multer = require('multer')
+const upload = multer({
+    dest  : 'images',
+    limits: {
+        fileSize: 100 * 1024,
+    },
+    fileFilter(req, file, cb) {
+        // console.log(file)
+        if (!file.originalname.match(/\.(jpg||jpeg||png)$/)) {
+            return cb(new Error('You must upload an image file'))
+        }
+        cb(undefined, true)
+    },
+
+})
+
+// const errMiddleware = (req, res, next) => {
+//     throw new Error('I am in error middleware')
+// }
+
+app.post('/upload', upload.single('upload'), (req, res) => {
+    res.send()
+}, (err, req, res, next) => {
+    res.status(400).send({error: err.message})
+})
+
 app.use(express.json())
-// app.use(express.urlencoded({ extended: true }));
 
 app.use(userRouter)
 app.use(taskRouter)
@@ -19,14 +44,3 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 })
 
-// const main = async () => {
-//     // const task = await Task.findById('63916e36f1b58ab889c0eeb3')
-//     // await task.populate('owner');
-//     // console.log(task.owner)
-//
-//     const user= await User.findById('6391749e4becb9cb9b68355c')
-//     await user.populate('tasks')
-//     console.log(user.tasks)
-// }
-//
-// main()
