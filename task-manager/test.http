@@ -36,6 +36,36 @@ content-type: application/json
   "email": "minh@example.com",
   "password": "12345678"
 }
+###signup user
+POST http://localhost:3004/users/signup HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Tuan",
+  "email": "tuan@example.com",
+  "password": "12345678",
+  "age": 29
+}
+###signup user
+POST http://localhost:3004/users/signup HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Hoang",
+  "email": "hoang@example.com",
+  "password": "12345678",
+  "age" : 33
+}
+###signup user
+POST http://localhost:3004/users/signup HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Nam",
+  "email": "nam@example.com",
+  "password": "12345678",
+  "age" : 34
+}
 
 ###PATCH user
 PATCH http://localhost:3004/users/me HTTP/1.1

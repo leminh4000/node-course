@@ -19,14 +19,14 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 })
 
-const main = async () => {
-    // const task = await Task.findById('63916e36f1b58ab889c0eeb3')
-    // await task.populate('owner');
-    // console.log(task.owner)
-
-    const user= await User.findById('6391749e4becb9cb9b68355c')
-    await user.populate('tasks')
-    console.log(user.tasks)
-}
-
-main()
+// const main = async () => {
+//     // const task = await Task.findById('63916e36f1b58ab889c0eeb3')
+//     // await task.populate('owner');
+//     // console.log(task.owner)
+//
+//     const user= await User.findById('6391749e4becb9cb9b68355c')
+//     await user.populate('tasks')
+//     console.log(user.tasks)
+// }
+//
+// main()
