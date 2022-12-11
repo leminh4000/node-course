@@ -35,7 +35,7 @@ router.post('/users/signup', async (req, res) => {
     try {
         await user.save()
         const token = await user.createToken();
-        res.status(200).send({
+        res.status(201).send({
             user,
             token
         })

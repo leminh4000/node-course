@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require("./task");
 
+
 const userSchema = new mongoose.Schema({
     name    : {
         type    : String,
@@ -75,7 +76,7 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
 userSchema.methods.createToken = async function () {
     const user = this;
-    const token = jwt.sign({_id: user._id.toString()}, 'thisismynewcourse')
+    const token = jwt.sign({_id: user._id.toString()},  process.env.JWT_SECRET)
     user.tokens = user.tokens.concat({token})
     await user.save()
     return token
@@ -90,8 +91,6 @@ userSchema.virtual('tasks', {
 userSchema.methods.toJSON = function () {
     const user = this;
     const userObject = user.toObject()
-    console.log(user)
-    console.log(userObject)
     delete userObject.password
     delete userObject.tokens
 

@@ -17,6 +17,8 @@ content-type: application/json
     "email": "andrew@example.com",
     "password": "12345678"
 }
+
+
 ###signup user
 POST http://localhost:3004/users/signup HTTP/1.1
 content-type: application/json
@@ -36,6 +38,7 @@ content-type: application/json
   "email": "minh@example.com",
   "password": "12345678"
 }
+
 ###signup user
 POST http://localhost:3004/users/signup HTTP/1.1
 content-type: application/json
@@ -46,6 +49,7 @@ content-type: application/json
   "password": "12345678",
   "age": 29
 }
+
 ###signup user
 POST http://localhost:3004/users/signup HTTP/1.1
 content-type: application/json
@@ -56,6 +60,7 @@ content-type: application/json
   "password": "12345678",
   "age" : 33
 }
+
 ###signup user
 POST http://localhost:3004/users/signup HTTP/1.1
 content-type: application/json
@@ -121,7 +126,7 @@ content-type: application/json
 
 ### POST task
 POST http://localhost:3004/tasks HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyZjlkNTIyOTMzMTcxZGY5Njg0Y2YiLCJpYXQiOjE2NzA1NzY1OTd9.S1bDfr6AarH7bCu0Djo2kWacunulEJG7PaTd0VUfB7U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk0NGI5ZDA0OTk5MzQyMDZkNWE3YjUiLCJpYXQiOjE2NzA2NjMwNjl9.wYroero_t7417sCfDTgbu17jaIZHedjnIC4_CNiDGM8
 content-type: application/json
 
 {
@@ -155,7 +160,7 @@ content-type: application/json
 
 ### GET tasks
 GET http://localhost:3004/tasks?sortBy=createdAt:desc HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkyZjlkNTIyOTMzMTcxZGY5Njg0Y2YiLCJpYXQiOjE2NzA1NzY1OTd9.S1bDfr6AarH7bCu0Djo2kWacunulEJG7PaTd0VUfB7U
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mzk0NGI5ZDA0OTk5MzQyMDZkNWE3YjUiLCJpYXQiOjE2NzA2NjMwNjl9.wYroero_t7417sCfDTgbu17jaIZHedjnIC4_CNiDGM8
 
 ### GET tasks
 GET http://localhost:3004/tasks/63916e36f1b58ab889c0eeb3 HTTP/1.1
